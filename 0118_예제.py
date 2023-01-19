@@ -20,6 +20,7 @@ for t in range(T):
 
 
 # 백준 10988번 팰린드롬인지 확인하기
+# 방법 (1)
 word = input()
 reversed_word = ''
 for char in word[::-1]:
@@ -29,6 +30,27 @@ if reversed_word == word:
 else:
     print(0)
 
+# 방법 (2)
+word = input()
+
+start = 0
+end = len(word) - 1
+is_pal = True
+
+while start < end:
+    if word[start] == word[end]:
+        is_pal = True
+    if word[start] != word[end]:
+        is_pal = False
+        break
+    start += 1
+    end -= 1
+
+if is_pal == True:
+    print(1)
+else:
+    print(0)
+    
 
 # 백준 17249번 태보태보 총난타
 taebo = input().split('(^0^)')
