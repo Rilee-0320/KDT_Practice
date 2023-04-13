@@ -62,4 +62,8 @@ def update(request):
     return render(request, 'accounts/update.html', context)
 
 
-# 회원 탈퇴
+@login_required
+def delete(request):
+    request.user.delete()
+    auth_logout(request)
+    return redirect('reviews:index')
