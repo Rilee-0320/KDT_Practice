@@ -3,7 +3,8 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
-from .forms import CustomUserCreationForm
+
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 # Create your views here.
 def login(request):
@@ -44,3 +45,21 @@ def signup(request):
         'form': form,
     }
     return render(request, 'accounts/signup.html', context)
+
+
+@login_required
+def update(request):
+    if request.method == 'POST':
+        form = CustomUserChangeForm(data=request.POST, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect('reviews:index')
+    else:
+        form = CustomUserChangeForm(instance=request.user)
+    context = {
+        'form': form,
+    }
+    return render(request, 'accounts/update.html', context)
+
+
+# 회원 탈퇴
