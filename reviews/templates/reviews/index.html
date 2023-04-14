@@ -2,7 +2,7 @@
 
 {% block content %}
   <h1>Review</h1>
-
+  <a href="{% url 'reviews:create' %}">후기 작성</a>
   {% for review in reviews %}
     <p>제목:
       {{ review.title }}</p>
