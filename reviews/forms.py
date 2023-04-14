@@ -13,6 +13,12 @@ class ReviewForm(forms.ModelForm):
 
 
 class CommentForm(forms.ModelForm):
+    # content = forms.Textarea(
+    #     widget=forms.TextInput(attrs={
+    #         'rows': 7,
+    #         'cols': 7,
+    #     })
+    # )
     class Meta:
         model = Comment
         fields = (

@@ -5,15 +5,22 @@
   <p>{{ review.content }}</p>
   <p>{{ review.movie }}</p>
   <a href="{% url 'reviews:index' %}">[ HOME ]</a>
+
   <hr>
+  <!-- 댓글 -->
   {% for comment in comments %}
     <p>
+      by
+      {{comment.user}}
+      |
       {{ comment.content }}
     </p>
-    <form action="{% url 'reviews:comment_delete' review.pk comment.pk %}" method='POST'>
-      {% csrf_token %}
-      <input type="submit" value="댓글 삭제">
-    </form>
+    {% if user == comment.user %}
+      <form action="{% url 'reviews:comment_delete' review.pk comment.pk %}" method='POST'>
+        {% csrf_token %}
+        <input type="submit" value="댓글 삭제">
+      </form>
+    {% endif %}
   {% endfor %}
   <hr>
   <form action="{% url 'reviews:comment_create' review.pk %}" method="post">
