@@ -2,9 +2,14 @@
 
 {% block content %}
   <h1>Review</h1>
-  {% if user.is_authenticated %}
-    <a href="{% url 'accounts:logout' %}">Logout</a>
-  {% else %}
-    <a href="{% url 'accounts:login' %}">Login</a>
-  {% endif %}
+
+  {% for review in reviews %}
+    <p>제목:
+      {{ review.title }}</p>
+    <p>내용:
+      {{ review.content }}</p>
+    <p>영화제목:
+      {{ review.movie }}</p>
+  {% endfor %}
+
 {% endblock content %}
