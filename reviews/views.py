@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
+
 from .models import Review
-from .forms import ReviewForm
+from .forms import ReviewForm, CommentForm
 
 # Create your views here.
 def index(request):
@@ -27,4 +28,15 @@ def create(request):
         'form': form,
     }
     return render(request, 'reviews/create.html', context)
-    
+
+
+@login_required
+def comment_create(request):
+    if request.method == 'POST':
+        pass
+    else:
+        form = CommentForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'reviews/detail.html', context)
