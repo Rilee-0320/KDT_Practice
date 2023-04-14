@@ -1,8 +1,31 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ review.title }}</h1>
-<p>{{ review.content }}</p>
-<p>{{ review.movie }}</p>
-<a href="{% url 'reviews:index' %}">[ HOME ]</a>
+  <h1>{{ review.title }}</h1>
+  <p>{{ review.content }}</p>
+  <p>{{ review.movie }}</p>
+  <a href="{% url 'reviews:index' %}">[ HOME ]</a>
+
+  <hr>
+  <!-- 댓글 -->
+  {% for comment in comments %}
+    <p>
+      by
+      {{comment.user}}
+      |
+      {{ comment.content }}
+    </p>
+    {% if user == comment.user %}
+      <form action="{% url 'reviews:comment_delete' review.pk comment.pk %}" method='POST'>
+        {% csrf_token %}
+        <input type="submit" value="댓글 삭제">
+      </form>
+    {% endif %}
+  {% endfor %}
+  <hr>
+  <form action="{% url 'reviews:comment_create' review.pk %}" method="post">
+    {% csrf_token %}
+    {{ comment_form.as_p }}
+    <input type="submit" value="댓글 작성">
+  </form>
 {% endblock content %}
