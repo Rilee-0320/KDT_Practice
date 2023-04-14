@@ -9,12 +9,14 @@
     </a>
     <div>
       {% if user.is_authenticated %}
+      <p class="d-inline-block">
+        <a href="{% url 'accounts:profile' user.pk %}">
+          {{ user }}
+        </a>님, 안녕하세요!
+      </p>
       <a href="{% url 'accounts:logout' %}">
         <button class="btn btn-sm btn-outline-success me-2" type="button">로그아웃</button>
       </a>  
-      <a href="{% url 'accounts:update' %}">
-        <button class="btn btn-sm btn-outline-secondary" type="button">회원정보 수정</button>
-      </a>
       {% else %}
       <a href="{% url 'accounts:login' %}">
         <button class="btn btn-sm btn-outline-success me-2" type="button">로그인</button>

@@ -8,7 +8,7 @@ from .forms import ReviewForm, CommentForm
 def index(request):
     reviews = Review.objects.all()
     context = {
-        'reviews': reviews
+        'reviews': reviews,
     }
     return render(request, 'reviews/index.html', context)
 

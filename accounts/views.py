@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import get_user_model
 from django.contrib.auth import login as auth_login
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
@@ -66,4 +67,18 @@ def update(request):
 def delete(request):
     request.user.delete()
     auth_logout(request)
+    return redirect('reviews:index')
+
+
+@login_required
+def profile(request, user_pk):
+    if get_user_model().objects.filter(pk=user_pk).exists():
+        user = get_user_model().objects.get(pk=user_pk)
+        if request.user == user:
+            reviews = user.review_set.all()
+            context = {
+                'reviews': reviews,
+                'user': user,
+            }
+            return render(request, 'accounts/profile.html', context)
     return redirect('reviews:index')
