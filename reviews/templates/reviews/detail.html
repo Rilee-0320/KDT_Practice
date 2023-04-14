@@ -25,9 +25,11 @@
     {% endif %}
   {% endfor %}
   <hr>
-  <form action="{% url 'reviews:comment_create' review.pk %}" method="post">
-    {% csrf_token %}
-    {{ comment_form.as_p }}
-    <input type="submit" value="댓글 작성">
-  </form>
+  {% if user.is_authenticated %}
+    <form action="{% url 'reviews:comment_create' review.pk %}" method="post">
+      {% csrf_token %}
+      {{ comment_form.as_p }}
+      <input type="submit" value="댓글 작성">
+    </form>
+  {% endif %}
 {% endblock content %}
