@@ -5,7 +5,9 @@
   <p>{{ review.content }}</p>
   <p>{{ review.movie }}</p>
   <a href="{% url 'reviews:index' %}">[ HOME ]</a>
-
+  {% if user == review.user %}
+  <a href="{% url 'reviews:update' review.pk %}">수정하기</a>
+  {% endif %}
   <hr>
   <!-- 댓글 -->
   {% for comment in comments %}

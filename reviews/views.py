@@ -44,6 +44,26 @@ def create(request):
 
 
 @login_required
+def update(request, review_pk):
+    review = Review.objects.get(pk=review_pk)
+    if request.user == review.user:
+        if request.method == 'POST':
+            form = ReviewForm(request.POST, instance=review)
+            if form.is_valid():
+                form.save()
+                return redirect('reviews:detail', review.pk)
+        else:
+            form = ReviewForm(instance=review)
+    else:
+        return redirect('reviews:detail', review.pk)
+    context = {
+        'form': form,
+        'review_pk': review.pk
+    }
+    return render(request, 'reviews/update.html', context)
+
+
+@login_required
 def comment_create(request, review_pk):
     '''POST로만 받게 되어있다'''
     review = Review.objects.get(pk=review_pk)
