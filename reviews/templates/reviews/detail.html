@@ -5,4 +5,16 @@
 <p>{{ review.content }}</p>
 <p>{{ review.movie }}</p>
 <a href="{% url 'reviews:index' %}">[ HOME ]</a>
+<hr>
+{% for comment in comments %}
+<p>
+  {{ comment.content }}
+</p>
+{% endfor %}
+<hr>
+<form action="{% url 'reviews:comment_create' review.pk %}" method="post">
+  {% csrf_token %}
+  {{ comment_form.as_p }}
+  <input type="submit" value="댓글 작성">
+</form>
 {% endblock content %}
