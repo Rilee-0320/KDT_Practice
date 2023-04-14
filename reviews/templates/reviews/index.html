@@ -2,7 +2,9 @@
 
 {% block content %}
   <h1>Review</h1>
+  {% if user.is_authenticated %}
   <a href="{% url 'reviews:create' %}">후기 작성</a>
+  {% endif %}
   {% for review in reviews %}
   <p>
     제목: {{ review.title }}
