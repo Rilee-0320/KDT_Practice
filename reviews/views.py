@@ -63,6 +63,14 @@ def update(request, review_pk):
 
 
 @login_required
+def delete(request, review_pk):
+    review = Review.objects.get(pk=review_pk)
+    if request.user == review.user:
+        review.delete()
+    return redirect('reviews:index')
+
+
+@login_required
 def comment_create(request, review_pk):
     '''POST로만 받게 되어있다'''
     review = Review.objects.get(pk=review_pk)
