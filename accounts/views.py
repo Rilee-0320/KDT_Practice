@@ -71,14 +71,11 @@ def delete(request):
 
 
 @login_required
-def profile(request, user_pk):
-    if get_user_model().objects.filter(pk=user_pk).exists():
-        user = get_user_model().objects.get(pk=user_pk)
-        if request.user == user:
-            reviews = user.review_set.all()
-            context = {
-                'reviews': reviews,
-                'user': user,
-            }
-            return render(request, 'accounts/profile.html', context)
-    return redirect('reviews:index')
+def profile(request):
+    user = request.user
+    reviews = user.review_set.all()
+    context = {
+        'reviews': reviews,
+        'user': user,
+    }
+    return render(request, 'accounts/profile.html', context)
