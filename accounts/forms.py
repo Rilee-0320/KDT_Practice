@@ -22,7 +22,7 @@ class CustomUserCreationForm(UserCreationForm):
 class CustomUserChangeForm(UserChangeForm):
     class Meta:
         model = get_user_model()
-        fields = ('email')
+        fields = ('email',)
         label_suffix = ''
 
     email = forms.EmailField(label='이메일', label_suffix='', widget=forms.EmailInput(
