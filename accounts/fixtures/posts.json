@@ -1,0 +1,77 @@
+[
+{
+    "model": "posts.post",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "title": "점심",
+        "select1_content": "자장면",
+        "select2_content": "짬뽕",
+        "image1": "image/20170427213340_1q1q.jpg",
+        "image2": "image/짬뽕.jpg",
+        "select1_users": [
+            1,
+            2
+        ],
+        "select2_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 2,
+    "fields": {
+        "user": 1,
+        "title": "소풍",
+        "select1_content": "산",
+        "select2_content": "바다",
+        "image1": "image/산.jpg",
+        "image2": "image/바다.jpg",
+        "select1_users": [
+            1
+        ],
+        "select2_users": [
+            2,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 3,
+    "fields": {
+        "user": 1,
+        "title": "커피",
+        "select1_content": "아아메",
+        "select2_content": "카페라떼",
+        "image1": "image/아아.jpg",
+        "image2": "image/카페라떼.jpg",
+        "select1_users": [
+            1,
+            2
+        ],
+        "select2_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.post",
+    "pk": 5,
+    "fields": {
+        "user": 1,
+        "title": "음료",
+        "select1_content": "사이다",
+        "select2_content": "콜라",
+        "image1": "image/사이다_22KkcwK.jpg",
+        "image2": "image/콜라.jpg",
+        "select1_users": [
+            3
+        ],
+        "select2_users": [
+            2
+        ]
+    }
+}
+]

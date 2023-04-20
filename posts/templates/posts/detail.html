@@ -1,9 +1,23 @@
 {% extends 'base.html' %}
 {% block title %}detail{% endblock title %}
 {% block style %}
+{% comment %} 
+.card {
+  width : 348px;
+  height: 332px;
+} {% endcomment %}
+
 .card-footer a {
   font-weight: normal;
 }
+
+.card-footer {
+  height: 43px;
+}
+.card-footer-input {
+  line-height: 43px;
+}
+
 {% endblock style %} 
 {% block body %}
   <h2 class="mb-3">🤼 {{ post.title }}</h2>
@@ -16,48 +30,50 @@
   <p>{{ post.select1_content }}: {{ post.select1_users }}</p>
   <p>{{ post.select2_content }}: {{ post.select2_users }}</p> {% endcomment %}
   
-  <div class="row">
+  <div class="row align-items-center justify-content-center">
 
-    <div class="col-md-4">
-      <form method="POST" action="{% url 'posts:answer' post.pk 'select1' %}">
-        <div class="card">
-          <div class="card-body">
-            <!-- 이미지 -->
-          </div>
-            <div class="card-footer  text-center">
-              {% csrf_token %}
-              <a href="{% url 'posts:detail' post.pk %}">
-              {{ post.select1_content }} - {{ post.select1_users.count }}명
-              </a>
-          </div>
+    <div class="col-md-4 d-flex justify-content-end">
+      <div class="card" style="width:300px">
+        <div class="card-body text-center">
+          <!-- 이미지 -->
+          <img src="{{ post.image1.url }}" alt="img1">
         </div>
-      </form>
+        <form method="POST" action="{% url 'posts:answer' post.pk 'select1' %}">
+          {% csrf_token %}
+          <div class="card-footer text-center p-0">
+            <a href="{% url 'posts:detail' post.pk %}">
+              <input type="submit" class="border-0 w-100 bg-transparent card-footer-input" value="{{ post.select1_content }} - {{ post.select1_users.count }}명">
+            </a>
+          </div>
+        </form>
+      </div>
     </div>
-    
-
     <div class="col-md-4">
-      <form method="POST" action="{% url 'posts:answer' post.pk 'select2' %}">
-        <div class="card">
-          <div class="card-body">
-            <!-- 이미지 -->
-          </div>
-            <div class="card-footer  text-center">
-              {% csrf_token %}
-              <a href="{% url 'posts:detail' post.pk %}">
-              {{ post.select2_content }} - {{ post.select2_users.count }}명
-              </a>
-          </div>
+      <h2 class="text-center">VS</h2>
+        <div class="d-flex justify-content-center align-items-center mt-2">
+          <a href="{% url 'posts:index' %}" class="btn btn-outline-primary btn-sm">뒤로 가기</a>
+          <form method="POST" action="{% url 'posts:delete' post.pk %}">
+            {% csrf_token %}
+            <input type="submit" value="삭제" class="btn btn-outline-danger btn-sm  mx-2">
+          </form>
+        </div>   
+    </div>
+    <div class="col-md-4">
+      <div class="card" style="width:300px">
+        <div class="card-body text-center">
+          <!-- 이미지 -->
+          <img src="{{post.image2.url}}" alt="image2" class="image-fluid">
         </div>
-      </form>
+        <form method="POST" action="{% url 'posts:answer' post.pk 'select2' %}">
+          {% csrf_token %}
+            <div class="card-footer text-center p-0">
+              <a href="{% url 'posts:detail' post.pk %}">
+                <input type="submit" class="border-0 w-100 bg-transparent card-footer-input" value="{{ post.select2_content }} - {{ post.select2_users.count }}명">
+              </a>
+            </div>
+          </form>
+        </div>
     </div>
 
-  <div class="d-flex justify-content-start align-items-center mt-2">
-    <a href="{% url 'posts:index' %}" class="btn btn-outline-primary btn-sm">뒤로 가기</a>
-    <form method="POST" action="{% url 'posts:delete' post.pk %}">
-      {% csrf_token %}
-      <input type="submit" value="삭제" class="btn btn-outline-danger btn-sm  mx-2">
-    </form>
-    
-  </div>
 {% endblock body %}
 

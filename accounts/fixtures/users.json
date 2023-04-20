@@ -1,0 +1,74 @@
+[
+{
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$hgAGu86uYubPHm5A3hOQwm$VJIRJaHfk4RbglQUYttanPpDvQu8apfTcRE8/P0cssU=",
+        "last_login": "2023-04-20T04:32:13.326Z",
+        "is_superuser": false,
+        "username": "eunjeong",
+        "first_name": "",
+        "last_name": "",
+        "email": "eunjeong0223@naver.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-20T01:52:51.231Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$j8gBCD8Mj6AzGJqowu4n6i$bufZp/6FF2T78gaPjq9i7vBWQSmkXXLBsCCaQghTyhU=",
+        "last_login": "2023-04-20T04:35:40.261Z",
+        "is_superuser": false,
+        "username": "rilee",
+        "first_name": "",
+        "last_name": "",
+        "email": "go13209@naver.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-20T04:35:38.882Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 3,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$vcOZgTLPBbgkFbIiMAeBAL$LnSYpgA5dGGGz1NJtoVGUgTrP5hh+1Bqvy9/AQnvcIg=",
+        "last_login": "2023-04-20T04:57:30.854Z",
+        "is_superuser": false,
+        "username": "yong",
+        "first_name": "",
+        "last_name": "",
+        "email": "yong1@abc.net",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-20T04:57:30.227Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 4,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$YThPhXRSqypwlgnvwBiEHV$Yuyh75/RMNUK33tPrSsO9jZlRtLBBzm5fyZKe+MfhXI=",
+        "last_login": "2023-04-20T05:40:38.045Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-04-20T05:39:51.368Z",
+        "groups": [],
+        "user_permissions": []
+    }
+}
+]
