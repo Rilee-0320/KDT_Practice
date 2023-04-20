@@ -11,7 +11,7 @@ from .forms import CustomUserCreationForm, CustomUserChangeForm, LoginForm, Cust
 
 def login(request):
     if request.user.is_authenticated:
-        return redirect('accounts:index')
+        return redirect('posts:index')
     if request.method == 'POST':
         form = LoginForm(request, request.POST)
         if form.is_valid():

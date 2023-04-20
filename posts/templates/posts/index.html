@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}index{% endblock title %}
+{% block body %}
+  <a href="{% url 'posts:create' %}">생성</a>
+  {% for post in posts %}
+    <p><a href="{% url 'posts:detail' post.pk %}">{{ post.title }}</a></p>
+    <form action="{% url 'posts:delete' post.pk%}" method='POST'>
+      {% csrf_token %}
+      <input type="submit" value='삭제'>
+    </form>
+  {% endfor %}
+{% endblock body %}
