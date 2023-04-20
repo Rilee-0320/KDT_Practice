@@ -4,7 +4,7 @@
 {% endblock style %} 
 {% block body %}
 <h2 class="mb-3">🎮 밸런스 게임 생성</h2>
-  <form action="{% url 'posts:create' %}" method='POST'>
+  <form action="{% url 'posts:create' %}" method='POST' enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="생성" class="btn btn-outline-primary"/>

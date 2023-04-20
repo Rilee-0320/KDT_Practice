@@ -5,5 +5,4 @@ from django.contrib.auth.models import AbstractUser
 
 
 class User(AbstractUser):
-    # balance_game = models.ForeignKey(Post,on_delete=models.CASCADE)
     pass
