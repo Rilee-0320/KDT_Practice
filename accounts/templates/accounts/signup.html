@@ -4,9 +4,8 @@
 {% endblock style %} 
 {% block body %}
 <h2 class="mb-3">🆕 회원가입</h2>
-<form action="{% url 'accounts:signup' %}" method="post">
-  {% csrf_token %} 
-  {{ form.as_p }}
-<input type="submit" value="회원가입" class="btn btn-outline-success"/>
-</form>
+    <form action="{% url 'accounts:signup' %}" method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <input type="submit" value="회원가입" class="btn btn-outline-success" />
+    </form>
 {% endblock body %} 

@@ -2,24 +2,23 @@
 {% block title %}index{% endblock title %}
 {% block body %}
 <h2 class="mb-3">🤝 밸런스 게임</h2>
-  <a href="{% url 'posts:create' %}">
-    <button class="btn btn-outline-primary mb-3">밸런스 게임 생성
-    </button>
-  </a>
-  <div class="row">
-    {% for post in posts %}
+    <a href="{% url 'posts:create' %}">
+      <button class="btn btn-outline-primary mb-3">밸런스 게임 생성</button>
+    </a>
+    <div class="row">
+      {% for post in posts %}
       <div class="col-md-3">
         <div class="card mb-4 p-1">
           <a href="{% url 'posts:detail' post.pk %}">
             <div class="card-body text-center">
-                {{ post.title }}
-              <div class='float-end' style='font-size: 13px;'>
+              {{ post.title }}
+              <div class="float-end" style="font-size: 13px">
                 💬: {{ post.comment_set.all|length }}
               </div>
             </div>
           </a>
         </div>
       </div>
-    {% endfor %}
-  </div>  
+      {% endfor %}
+    </div> 
 {% endblock body %}
