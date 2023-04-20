@@ -9,16 +9,17 @@
   <div class="row">
     {% for post in posts %}
       <div class="col-md-3">
-        <div class="card mb-4">
+        <div class="card mb-4 p-1">
           <a href="{% url 'posts:detail' post.pk %}">
             <div class="card-body text-center">
-              {{ post.title }}
+                {{ post.title }}
+              <div class='float-end' style='font-size: 13px;'>
+                💬: {{ post.comment_set.all|length }}
+              </div>
             </div>
           </a>
         </div>
       </div>
     {% endfor %}
-  </div>
-  
-    
+  </div>  
 {% endblock body %}

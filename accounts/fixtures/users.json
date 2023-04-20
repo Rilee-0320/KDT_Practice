@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$260000$hgAGu86uYubPHm5A3hOQwm$VJIRJaHfk4RbglQUYttanPpDvQu8apfTcRE8/P0cssU=",
-        "last_login": "2023-04-20T04:32:13.326Z",
+        "last_login": "2023-04-20T07:00:26.175Z",
         "is_superuser": false,
         "username": "eunjeong",
         "first_name": "",
@@ -22,7 +22,7 @@
     "pk": 2,
     "fields": {
         "password": "pbkdf2_sha256$260000$j8gBCD8Mj6AzGJqowu4n6i$bufZp/6FF2T78gaPjq9i7vBWQSmkXXLBsCCaQghTyhU=",
-        "last_login": "2023-04-20T04:35:40.261Z",
+        "last_login": "2023-04-20T08:00:12.146Z",
         "is_superuser": false,
         "username": "rilee",
         "first_name": "",
@@ -40,7 +40,7 @@
     "pk": 3,
     "fields": {
         "password": "pbkdf2_sha256$260000$vcOZgTLPBbgkFbIiMAeBAL$LnSYpgA5dGGGz1NJtoVGUgTrP5hh+1Bqvy9/AQnvcIg=",
-        "last_login": "2023-04-20T04:57:30.854Z",
+        "last_login": "2023-04-20T07:29:19.605Z",
         "is_superuser": false,
         "username": "yong",
         "first_name": "",
@@ -67,6 +67,24 @@
         "is_staff": true,
         "is_active": true,
         "date_joined": "2023-04-20T05:39:51.368Z",
+        "groups": [],
+        "user_permissions": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 5,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$15ikgzUJ8bMrqKodPoZL6v$cgGcdNJL5LSD3DUXarNivDvWLaBVgO0lOVryUqqCQqE=",
+        "last_login": "2023-04-20T07:42:50.492Z",
+        "is_superuser": false,
+        "username": "afro1662",
+        "first_name": "",
+        "last_name": "",
+        "email": "afro1662@naver.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-20T07:08:11.666Z",
         "groups": [],
         "user_permissions": []
     }

@@ -17,10 +17,15 @@ class Post(models.Model):
                                 upload_to='image/',
                                 processors=[ResizeToFill(260, 300)],
                                 format='JPEG',
-                                options={'quality': 60})
+                                options={'quality': 90})
     image2 = ProcessedImageField(blank = True,
                                 upload_to='image/',
                                 processors=[ResizeToFill(260, 300)],
                                 format='JPEG',
-                                options={'quality': 60})
+                                options={'quality': 90})
 
+
+class Comment(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    content = models.CharField(max_length=200)
