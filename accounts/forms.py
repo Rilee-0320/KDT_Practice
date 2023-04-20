@@ -9,7 +9,7 @@ class CustomUserCreationForm(UserCreationForm):
         fields = ('username', 'email', 'password1', 'password2')
         label_suffix = ''
 
-    username = forms.CharField(label='ID', label_suffix='', widget=forms.TextInput(
+    username = forms.CharField(label='아이디', label_suffix='', widget=forms.TextInput(
         attrs={'class': 'form-control', 'style': 'width: 200px;'}))
     email = forms.EmailField(label='이메일', label_suffix='', widget=forms.EmailInput(
         attrs={'class': 'form-control', 'style': 'width: 250px;'}))
