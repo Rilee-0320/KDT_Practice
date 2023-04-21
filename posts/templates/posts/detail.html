@@ -25,13 +25,27 @@
 <div class="mb-3 d-flex justify-content-between align-items-center">
   <div class="col-sm-8">
     <h2 class="mb-0 d-flex">🤼 {{ post.title }}
-      <form action="{% url 'posts:likes' post.pk %}" method='POST'>
+      {% comment %} <form action="{% url 'posts:likes' post.pk %}" method='POST'>
         {% csrf_token %}
         <button class="border-0 bg-transparent" type ='submit'>
           <i class="bi bi-hand-thumbs-up"></i>
         </button>
+      </form> {% endcomment %}
+      <form action="{% url 'posts:likes' post.pk %}" method="POST">
+        {% csrf_token %}
+        {% if request.user in post.like_users.all %}
+            <button class="border-0 bg-transparent" type="submit" value="좋아요">
+              <i class="bi bi-hand-thumbs-up text-primary"></i>
+            </button>
+        {% else %}
+            <button class="border-0 bg-transparent" type="submit" value="좋아요 취소">
+              <i class="bi bi-hand-thumbs-up text-secondary"></i>
+            </button>
+        {% endif %}
       </form>
-      <span class='d-flex align-items-end' style='font-size:16px;'>{{post.like_users.count}}</span>
+
+      <span class='d-flex align-items-end' style='font-size:20px;'>{{post.like_users.count}}</span>
+      
     </h2>
     <span class="text-muted"
       >작성자:
@@ -44,6 +58,8 @@
     <a href="{% url 'posts:index' %}" class="btn btn-outline-primary btn-sm"
       >뒤로 가기</a
     >
+    
+    {% if request.user == review.user %}
     <form method="POST" action="{% url 'posts:delete' post.pk %}">
       {% csrf_token %}
       <input
@@ -52,6 +68,7 @@
         class="btn btn-outline-danger btn-sm mx-2"
       />
     </form>
+    {% endif %}
   </div>
 </div>
 
@@ -135,25 +152,46 @@
       >{{ comment.user.username }}</a
     >: {{ comment.content }}
     <div class='d-flex'>
-      <form action="{% url 'posts:comment_delete' post.pk comment.pk %}" method='POST'>
-        {% csrf_token %}
-        <input
-        type="submit"
-        value= "삭제"
-        class="border-0 bg-transparent text-secondary"
-        style='font-size : 13px; font-weight:bold;'
-        />
-      </form>
-      <form action="{% url 'posts:comment_likes' post.pk comment.pk %}" method='POST'>
+      
+      {% comment %} <form action="{% url 'posts:comment_likes' post.pk comment.pk %}" method='POST'>
         {% csrf_token %}
         <button id='like_btn' style='font-size:13px;' class="border-0 bg-transparent d-flex align-items-end" type='submit'><i id='like_btn_icon' class="bi bi-heart"></i></button>
-      </form>
-      <span class='d-flex align-items-end' style='font-size:13px;'>{{comment.like_users.count}}</span>
+      </form> {% endcomment %}
+
+      <div class='d-flex align-items-end'>
+        <form action="{% url 'posts:comment_likes' post.pk comment.pk %}" method="POST">
+          {% csrf_token %}
+          {% if request.user in comment.like_users.all %}
+            <button id='like_btn' class="border-0 bg-transparent text-danger" type='submit'>
+              <i id='like_btn_icon' class="bi bi-heart-fill"></i>
+            </button>
+          {% else %}
+            <button id='like_btn' class="border-0 bg-transparent" type='submit'>
+              <i id='like_btn_icon' class="bi bi-heart"></i>
+            </button>
+          {% endif %}
+        </form>
+
+        <span class='ms-1' style='font-size:13px;'>{{comment.like_users.count}}</span>
+
+        {% if request.user.is_authenticated and request.user == comment.user %}
+          <form action="{% url 'posts:comment_delete' post.pk comment.pk %}" method="POST">
+            {% csrf_token %}
+            <input
+              type="submit"
+              value= " 삭제"
+              class="border-0 bg-transparent text-secondary"
+              style='font-size : 13px; font-weight:bold;'
+            />
+          </form>
+        {% endif %}
+      </div>
+      
     </div>
   </div>
 </li>
 {% endfor %}
-<script>
+{% comment %} <script>
   const like_btn = document.querySelector('#like_btn')
   const like_btn_icon = document.querySelector('#like_btn_icon')
 
@@ -161,6 +199,6 @@
     like_btn_icon.add('bi bi-heart-fill')
   })
 
-</script>
+</script> {% endcomment %}
 {% endblock body %}
 

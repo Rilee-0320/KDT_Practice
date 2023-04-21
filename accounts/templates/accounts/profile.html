@@ -4,4 +4,22 @@
 {% endblock style %} 
 {% block body %}
 <h2 class="mb-3">🤖 {{ person.username }}님의 프로필</h2>
+
+{% if request.user != person %}
+  <form action="{% url 'accounts:follow' person.pk %}" method="POST">
+  {% csrf_token %} 
+    {% if request.user in person.followers.all %}
+      <button type="submit" class="btn btn-primary my-2" value="언팔로우">
+        언팔로우
+      </button>
+    {% else %}
+      <button type="submit" class="btn btn-outline-primary my-2" value="팔로우">
+        팔로우
+      </button>
+    {% endif %}
+  </form>
+{% endif %}
+
+ <div class="mt-1">
+팔로잉 : {{ person.followings.all|length }} / 팔로워 : {{ person.followers.all|length }}
 {% endblock body %} 
