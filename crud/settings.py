@@ -10,7 +10,6 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from dotenv import load_dotenv
 from pathlib import Path
 import os
 
@@ -22,16 +21,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-
-load_dotenv()
-
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'django-insecure-y4m)t^i651bd68la93^+-^ir8-##m58d!7xx)x*ddsv$=g4ql#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [
-    'port-0-balance-game-17xqnr2algn9ajae.sel3.cloudtype.app', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = []
 
 
 # Application definition
