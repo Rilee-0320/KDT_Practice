@@ -4,7 +4,7 @@
     "pk": 1,
     "fields": {
         "password": "pbkdf2_sha256$260000$hgAGu86uYubPHm5A3hOQwm$VJIRJaHfk4RbglQUYttanPpDvQu8apfTcRE8/P0cssU=",
-        "last_login": "2023-04-21T04:58:22.335Z",
+        "last_login": "2023-04-21T10:35:24.105Z",
         "is_superuser": false,
         "username": "eunjeong",
         "first_name": "",
@@ -27,7 +27,7 @@
     "pk": 2,
     "fields": {
         "password": "pbkdf2_sha256$260000$j8gBCD8Mj6AzGJqowu4n6i$bufZp/6FF2T78gaPjq9i7vBWQSmkXXLBsCCaQghTyhU=",
-        "last_login": "2023-04-21T02:43:37.615Z",
+        "last_login": "2023-04-21T07:27:51.372Z",
         "is_superuser": false,
         "username": "rilee",
         "first_name": "",
@@ -50,7 +50,7 @@
     "pk": 3,
     "fields": {
         "password": "pbkdf2_sha256$260000$vcOZgTLPBbgkFbIiMAeBAL$LnSYpgA5dGGGz1NJtoVGUgTrP5hh+1Bqvy9/AQnvcIg=",
-        "last_login": "2023-04-21T04:36:04.010Z",
+        "last_login": "2023-04-21T08:24:37.654Z",
         "is_superuser": false,
         "username": "yong",
         "first_name": "",
@@ -92,7 +92,7 @@
     "pk": 5,
     "fields": {
         "password": "pbkdf2_sha256$260000$15ikgzUJ8bMrqKodPoZL6v$cgGcdNJL5LSD3DUXarNivDvWLaBVgO0lOVryUqqCQqE=",
-        "last_login": "2023-04-21T04:45:40.200Z",
+        "last_login": "2023-04-21T08:02:45.625Z",
         "is_superuser": false,
         "username": "afro1662",
         "first_name": "",
