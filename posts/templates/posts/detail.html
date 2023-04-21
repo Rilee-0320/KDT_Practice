@@ -22,6 +22,7 @@
 
 {% endblock style %} 
 {% block body %}
+
 <div class="mb-3 d-flex justify-content-between align-items-center">
   <div class="col-sm-8">
     <h2 class="mb-0 d-flex">🤼 {{ post.title }}
@@ -54,22 +55,18 @@
       ></span
     >
   </div>
-  <div class="col-sm-4 d-flex justify-content-end">
-    <a href="{% url 'posts:index' %}" class="btn btn-outline-primary btn-sm"
-      >뒤로 가기</a
-    >
-    
-    {% if request.user == review.user %}
-    <form method="POST" action="{% url 'posts:delete' post.pk %}">
-      {% csrf_token %}
-      <input
-        type="submit"
-        value="   삭제   "
-        class="btn btn-outline-danger btn-sm mx-2"
-      />
-    </form>
+  
+  <div class="col-sm-4 d-flex align-items-center justify-content-end">
+    {% if request.user == post.user %}
+      <a href="{% url 'posts:update' post.pk %}" class="btn btn-outline-success mx-1 align-self-center btn-sm">수정</a>
+      <form method="POST" action="{% url 'posts:delete' post.pk %}">
+        {% csrf_token %}
+        <input type="submit" value="삭제" class="btn btn-outline-danger btn-sm mx-1 align-self-center" />
+      </form>
     {% endif %}
+    <a href="{% url 'posts:index' %}" class="btn btn-outline-primary mx-1 btn-sm">뒤로 가기</a>
   </div>
+
 </div>
 
 {% comment %}
@@ -85,14 +82,17 @@
 <div class="row align-items-center justify-content-center">
   <div class="col-md-5 d-flex justify-content-end">
     <div class="card" style="width: 100%">
-      <div class="card-body text-center">
+      <div class="card-body text-center p-0">
         <!-- 이미지 -->
-        <img src="{{ post.image1.url }}" alt="img1" style="width: 100%" />
+        {% if post.image1 %}
+          <img src="{{ post.image1.url }}" alt="img1" style="width: 100%">
+        {% else %}
+          <img style ='width:100%' src="{% static 'no-photo.png' %}" alt="no-img">
+        {% endif %}
       </div>
       <form
         method="POST"
-        action="{% url 'posts:answer' post.pk 'select1' %}"
-      >
+        action="{% url 'posts:answer' post.pk 'select1' %}">
         {% csrf_token %}
         <div class="card-footer text-center p-0">
           <a href="{% url 'posts:detail' post.pk %}">
@@ -111,9 +111,13 @@
   </div>
   <div class="col-md-5">
     <div class="card" style="width: 100%">
-      <div class="card-body text-center">
+      <div class="card-body text-center p-0">
         <!-- 이미지 -->
-        <img src="{{post.image2.url}}" alt="image2" style="width: 100%" />
+        {% if post.image2 %}
+          <img src="{{ post.image2.url }}" alt="image2" style="width: 100%">
+        {% else %}
+          <img style ='width:100%' src="{% static 'no-photo.png' %}" alt="no-img">
+        {% endif %}
       </div>
       <form
         method="POST"
@@ -133,6 +137,7 @@
     </div>
   </div>
 </div>
+<div>
 <h5 class="mt-3">댓글 목록</h5>
 <div>댓글 개수: {{ post.comment_set.count }}</div>
 <div class="mt-3 mb-2">
@@ -145,6 +150,7 @@
     />
   </form>
 </div>
+
 {% for comment in comments %}
 <li class="comment-item mb-1" style="list-style: none">
   <div class="comment-author">
@@ -152,22 +158,17 @@
       >{{ comment.user.username }}</a
     >: {{ comment.content }}
     <div class='d-flex'>
-      
-      {% comment %} <form action="{% url 'posts:comment_likes' post.pk comment.pk %}" method='POST'>
-        {% csrf_token %}
-        <button id='like_btn' style='font-size:13px;' class="border-0 bg-transparent d-flex align-items-end" type='submit'><i id='like_btn_icon' class="bi bi-heart"></i></button>
-      </form> {% endcomment %}
 
       <div class='d-flex align-items-end'>
         <form action="{% url 'posts:comment_likes' post.pk comment.pk %}" method="POST">
           {% csrf_token %}
           {% if request.user in comment.like_users.all %}
             <button id='like_btn' class="border-0 bg-transparent text-danger" type='submit'>
-              <i id='like_btn_icon' class="bi bi-heart-fill"></i>
+              <i class="bi bi-heart-fill"></i>
             </button>
           {% else %}
             <button id='like_btn' class="border-0 bg-transparent" type='submit'>
-              <i id='like_btn_icon' class="bi bi-heart"></i>
+              <i class="bi bi-heart"></i>
             </button>
           {% endif %}
         </form>
@@ -175,6 +176,7 @@
         <span class='ms-1' style='font-size:13px;'>{{comment.like_users.count}}</span>
 
         {% if request.user.is_authenticated and request.user == comment.user %}
+          
           <form action="{% url 'posts:comment_delete' post.pk comment.pk %}" method="POST">
             {% csrf_token %}
             <input
@@ -191,14 +193,7 @@
   </div>
 </li>
 {% endfor %}
-{% comment %} <script>
-  const like_btn = document.querySelector('#like_btn')
-  const like_btn_icon = document.querySelector('#like_btn_icon')
 
-  like_btn.addEventListener('click', (event)=>{
-    like_btn_icon.add('bi bi-heart-fill')
-  })
 
-</script> {% endcomment %}
 {% endblock body %}
 
