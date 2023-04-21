@@ -6,8 +6,7 @@ from django.forms.widgets import FileInput
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'select1_content', 'image1',
-                  'select2_content', 'image2')
+        fields = ('title', 'select1_content', 'image1', 'select2_content', 'image2')
         label_suffix = ''
 
     title = forms.CharField(label='주제', label_suffix='', widget=forms.TextInput(
