@@ -8,6 +8,7 @@ from django.conf import settings
 
 class Post(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_posts')
     title = models.CharField(max_length=20)
     select1_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='selected1_users', blank=True)
     select1_content = models.CharField(max_length=20)
@@ -27,5 +28,6 @@ class Post(models.Model):
 
 class Comment(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_comments')
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     content = models.CharField(max_length=200)
