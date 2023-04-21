@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
-from .models import Post
+from .models import Post, Comment
 from .forms import PostForm, CommentForm
 # Create your views here.
 
@@ -58,14 +58,14 @@ def detail(request, post_pk):
     }
     return render(request, 'posts/detail.html', context)
 
-
+@login_required
 def delete(request, post_pk):
     post = Post.objects.get(pk=post_pk)
     if request.user == post.user:
         post.delete()
     return redirect('posts:index')
 
-
+@login_required
 def comment_create(request, post_pk):
     post = Post.objects.get(pk=post_pk)
     comment_form = CommentForm(request.POST)
@@ -84,19 +84,26 @@ def comment_create(request, post_pk):
     }
     return render(request, 'posts/detail.html', context)
 
+@login_required
+def comment_delete(request, post_pk, comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    if request.user == comment.user:
+        comment.delete()
+    
+    return redirect('posts:detail', post_pk)
 
-# @login_required
-# def comment_create(request, post_pk):
-#     post = Post.objects.get(pk=post_pk)
-#     comment_form = CommentForm(request.POST)
-#     if comment_form.is_valid():
-#         comment = comment_form.save(commit=False)
-#         comment.post = post
-#         comment.user = request.user
-#         comment.save()
-#         return redirect('posts:detail', post.pk)
-#     context = {
-#         'post': post,
-#         'comment_form': comment_form,
-#     }
-#     return render(request, 'posts/detail.html', context)
+def likes(request,post_pk):
+    post = Post.objects.get(pk=post_pk)
+    if post.like_users.filter(pk=request.user.pk).exists():
+        post.like_users.remove(request.user)
+    else:
+        post.like_users.add(request.user)
+    return redirect('posts:detail',post.pk)
+
+def comment_likes(request,post_pk,comment_pk):
+    comment = Comment.objects.get(pk=comment_pk)
+    if comment.like_users.filter(pk=request.user.pk).exists():
+        comment.like_users.remove(request.user)
+    else:
+        comment.like_users.add(request.user)   
+    return redirect('posts:detail', post_pk)
