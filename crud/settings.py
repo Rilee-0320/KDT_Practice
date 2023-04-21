@@ -30,7 +30,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'port-0-balance-game-17xqnr2algn9ajae.sel3.cloudtype.app', '127.0.0.1', 'localhost']
 
 
 # Application definition
