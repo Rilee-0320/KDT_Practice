@@ -1,203 +1,165 @@
 [
 {
     "model": "posts.comment",
-    "pk": 1,
-    "fields": {
-        "user": 5,
-        "post": 1,
-        "content": "ㅡㅡ",
-        "like_users": [
-            1,
-            3,
-            5
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 2,
-    "fields": {
-        "user": 1,
-        "post": 1,
-        "content": "댓글",
-        "like_users": [
-            1,
-            2
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 3,
-    "fields": {
-        "user": 5,
-        "post": 1,
-        "content": "ㅂㅂ",
-        "like_users": [
-            1,
-            5
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 5,
+    "pk": 22,
     "fields": {
         "user": 3,
-        "post": 1,
+        "post": 21,
         "content": "hi",
         "like_users": [
-            1
+            1,
+            3
         ]
     }
 },
 {
     "model": "posts.comment",
-    "pk": 6,
+    "pk": 23,
     "fields": {
         "user": 1,
-        "post": 1,
-        "content": "댓글작성..",
+        "post": 21,
+        "content": "맛있겠다",
         "like_users": [
-            1
+            1,
+            3
         ]
     }
 },
 {
     "model": "posts.comment",
-    "pk": 7,
+    "pk": 24,
     "fields": {
-        "user": 5,
-        "post": 1,
-        "content": "ㅡㅡ",
-        "like_users": [
-            1
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 8,
-    "fields": {
-        "user": 1,
-        "post": 1,
-        "content": "댓글작성",
-        "like_users": [
-            1
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 9,
-    "fields": {
-        "user": 3,
-        "post": 1,
-        "content": "hi",
-        "like_users": [
-            1
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 10,
-    "fields": {
-        "user": 5,
-        "post": 1,
-        "content": "ㅇㅇ",
-        "like_users": [
-            1
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 11,
-    "fields": {
-        "user": 3,
-        "post": 1,
-        "content": "hi",
-        "like_users": [
-            1
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 12,
-    "fields": {
-        "user": 1,
-        "post": 1,
-        "content": "글자가 보이나요",
-        "like_users": [
-            1
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 13,
-    "fields": {
-        "user": 3,
-        "post": 1,
-        "content": "214",
-        "like_users": [
-            1
-        ]
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 14,
-    "fields": {
-        "user": 5,
-        "post": 1,
-        "content": "..",
-        "like_users": []
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 15,
-    "fields": {
-        "user": 3,
-        "post": 1,
-        "content": "good",
-        "like_users": []
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 16,
-    "fields": {
-        "user": 1,
-        "post": 1,
-        "content": "댓글 달리나요!!?",
-        "like_users": []
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 18,
-    "fields": {
-        "user": 1,
-        "post": 2,
-        "content": "소풍",
-        "like_users": []
-    }
-},
-{
-    "model": "posts.comment",
-    "pk": 20,
-    "fields": {
-        "user": 1,
-        "post": 7,
+        "user": 2,
+        "post": 21,
         "content": "치킨",
         "like_users": [
             1,
-            2,
             3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 25,
+    "fields": {
+        "user": 3,
+        "post": 22,
+        "content": "good",
+        "like_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 26,
+    "fields": {
+        "user": 3,
+        "post": 23,
+        "content": "hi",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 27,
+    "fields": {
+        "user": 1,
+        "post": 22,
+        "content": "맛있겠다",
+        "like_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 28,
+    "fields": {
+        "user": 2,
+        "post": 22,
+        "content": "역시 아아죠",
+        "like_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 29,
+    "fields": {
+        "user": 3,
+        "post": 21,
+        "content": "저녁은 치킨",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 30,
+    "fields": {
+        "user": 1,
+        "post": 23,
+        "content": "강아지 귀엽다",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 31,
+    "fields": {
+        "user": 2,
+        "post": 23,
+        "content": "야옹",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 32,
+    "fields": {
+        "user": 3,
+        "post": 22,
+        "content": "라떼",
+        "like_users": [
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 33,
+    "fields": {
+        "user": 3,
+        "post": 23,
+        "content": "고양이 최고",
+        "like_users": [
+            1,
+            3
+        ]
+    }
+},
+{
+    "model": "posts.comment",
+    "pk": 34,
+    "fields": {
+        "user": 1,
+        "post": 24,
+        "content": "이제 여름이다",
+        "like_users": [
+            1
         ]
     }
 }
