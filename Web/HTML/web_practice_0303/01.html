@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      }
+    h2 {
+      border-bottom: 1px solid gray;
+      width: 75%;
+    }
+    .header-box {
+      height: 60px;
+      margin: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .header__logo {
+      display: flex;
+      width: 200px;
+    }
+    .header__join-login {
+      display: flex;
+      align-items: center;
+    }
+    .header__join-login__join {
+      width: 100px;
+    }
+    .header__join-login__login {
+      width: 100px;
+    }
+    .main-box {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+    .main__aside {
+      top: 0;
+      position: sticky;
+    }
+    .main__article {
+      width: 80%;
+    }
+    .main__article__infobox {
+      width: 300px;
+      border: 1px solid black;
+      background-color: white;
+      float: right;
+      font-size: smaller;
+    }
+    .main__aside_li {
+      list-style: none;
+      margin-bottom: 10px;
+    }
+    a {
+      text-decoration: none;
+      color: blue;
+    }
+  </style>
+</head>
+<body style="padding: 20px;">
+  <header>
+    <div class="header-box">
+      <div class="header__logo" style="cursor: pointer;" onclick="window.open('https://ko.wikipedia.org/wiki/%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC:%EB%8C%80%EB%AC%B8')">
+          <img style="height: 100%;" src="img/wikipedia.png" alt="지구본">
+          <div>
+            <img src="img/wikipedia-wordmark-ko.svg" alt="위키백과">
+            <img src="img/wikipedia-tagline-ko.svg" alt="백과사전">
+          </div>
+        </a>
+      </div>
+      <div class="header__join-login">
+        <div class="header__join-login__join">
+          <a href="https://ko.wikipedia.org/w/index.php?title=%ED%8A%B9%EC%88%98:%EA%B3%84%EC%A0%95%EB%A7%8C%EB%93%A4%EA%B8%B0&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&returntoquery=action%3Dedit">계정 만들기</a>
+        </div>
+        <div class="header__join-login__login">
+          <a href="https://ko.wikipedia.org/w/index.php?title=%ED%8A%B9%EC%88%98:%EB%A1%9C%EA%B7%B8%EC%9D%B8&returnto=%EC%9C%84%ED%82%A4%EB%B0%B1%EA%B3%BC%3A%EB%8C%80%EB%AC%B8&returntoquery=action%3Dedit">로그인</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main class="main-box">
+    <div style="width: 20%;">
+      <aside class="main__aside">
+        <p>목차</p>
+        <ul style="padding-left: 0;">
+          <li class="main__aside_li"><a href="#">처음 위치</a></li>
+          <li class="main__aside_li"><a href="#life">생애</a></li>
+          <li class="main__aside_li"><a href="#history">약력</a></li>
+          <li class="main__aside_li"><a href="#book">저서</a></li>
+        </ul>
+      </aside>
+    </div>
+    <article class="main__article">
+    <div><h1>팀 버너스리</h1><hr style="border: 1px solid black;"></div>
+    <div>위키백과, 우리 모두의 백과사전</div>
+    <table class="main__article__infobox">
+      <tbody>
+        <tr style="text-align: center; background-color: lightgray;">
+          <td colspan="2">팀 버너스리<br>Timothy John "Tim" Berners-Lee</td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <img style="width: 100%;" src="img/01.jpg" alt="팀 버너스리">
+            <p style="text-align: center;">팀 버너스리 (2014년)</p>
+          </td>  
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">출생</td>
+          <td>1955년 6월 8일(67세)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>잉글랜드 런던</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">분야</td>
+          <td>컴퓨터 과학</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">소속</td>
+          <td>W3C</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>사우샘프턴 대학교</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>플레시</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>매사추세츠 공과대학교</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">출신 대학</td>
+          <td>옥스퍼드 대학교 물리학 학사</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">수상</td>
+          <td>튜링상(2016)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>메리트 훈장(2007)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>대영 제국 훈장 2등급(2004)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>왕립학회 회원(2001)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>왕립공학학회 회원(2001)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>왕립예술학회 회원 (2001)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>영국 컴퓨터학회 최고회원(1995)</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">배우자</td>
+          <td>낸시 칼슨(1990 ~ 2011)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>로즈메리 리스(2014 ~ )</td>
+        </tr>
+        <tr>
+          <td style="font-weight: bold;">자녀</td>
+          <td>1남 1녀</td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <div>
+        <p>팀 버너스리 경(영어: Sir Tim Berners-Lee, OM, KBE, FRS, 1955년 6월 8일 ~ )은 영국의 컴퓨터 과학자이다.</p>
+        <p>1989년 월드 와이드 웹의 하이퍼텍스트 시스템을 고안하여 개발했다. 인터넷의 기반을 닦은 여러 공로로 웹의 아버지라고 불리는 인물 중 하나이다.</p>
+        <p>URL, HTTP, HTML 최초 설계와 구현도 CERN 시절에 동료였던 로베르 카이오(Robert Cailliau) 등과 함께 그가 주도한 것이다.</p>
+        <p>차세대 웹 기술인 시맨틱 웹 기술의 표준화에 힘쏟고 있다.</p>
+      </div>
+      <div>
+        <h2 id="life">생애</h2>
+        <div>
+          <p>버너스리는 잉글랜드 런던에서 태어났으며,[1] 부모는 메리 리 우즈(Mary Lee Woods)와 콘웨이 버너스리(Conway Berners-Lee)이다.</p>
+          <p>1990년에 낸시 칼슨(Nancy Carlson)과 결혼하였으나 2011년 이혼하였다.</p>
+          <p>2014년, 버너스리와 로즈메리 리스(Rosemary Leith)가 런던 세인트 제임스 궁전에서 결혼하였다.</p>
+        </div>
+      </div>
+      <div>
+        <h2 id="history">약력</h2>
+        <div>
+          <ul>
+            <li>CERN에서 WWW 개념의 기초가 된 인콰이어(Enquire)를 개발.</li>
+            <li>1989년 글로벌 하이퍼텍스트 프로젝트를 제안.</li>
+            <li>1990년 최초의 하이퍼텍스트 브라우저와 편집기를 개발.</li>
+            <li>1991년 8월 6일 최초의 웹사이트가 만들어짐.</li>
+            <li>1994년 W3C(World Wide Web Consortium)를 창립.</li>
+            <li>1997년 4등급 대영 제국 훈장(OBE)을 받음.</li>
+            <li>2002년 BBC '위대한 영국인 100(100 Greatest Britons)'에 선정됨.</li>
+            <li>2004년 6월 15일 밀레니엄 테크놀로지 상(Millennium Technology Prize)의 첫 수상자가 됨.</li>
+            <li>2004년 2등급 대영 제국 훈장(KBE, 작위급 훈장)을 받음.</li>
+            <li>2007년 메리트 훈장(OM)을 받음.</li>
+            <li>2016년 튜링상을 받음.</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <h2 id="book">저서</h2>
+        <div>
+          <ul>
+            <li>당신이 꿈꾸는 인터넷 세상 월드와이드웹(Weaving the web), ISBN 89-475-2329-1</li>
+            <li>정보 관리: 한가지 제안(Tim Berners-Lee, CERN)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </article>
+  </main>
+  <hr>
+  <footer>
+    <ul>
+      <li style="list-style: none;">KDT 2기 5회차 소현섭</li>
+      <li style="list-style: none;">KDT 2기 5회차 김규리</li>
+    </ul>
+  </footer>
+</body>
+</html>

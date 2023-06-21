@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      * {
+        box-sizing: border-box;
+        font-weight: bold;
+      }
+      .root {
+        display: flex;
+        width: 100%;
+        height: 90%;
+      }
+      .root__nav-bar {
+        width: 100px;
+        border-right: 1px solid black;
+        flex-grow: 1;
+      }
+      .root__main {
+        flex-grow: 1;
+      }
+      .root__top-bar {
+        height: 100px;
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid black;
+      }
+      .root__main__content {
+        display: flex;
+        flex-flow: row wrap;
+        padding: 20px;
+      }
+      .root__top--flex {
+        display: flex;
+        align-items: center;
+        padding: 20px;
+      }
+      .root__top-bar--border {
+        border: 1px solid black;
+        border-radius: 20px;
+        padding: 10px;
+        margin: 5px;
+        width: 150px;
+        text-align: center;
+      }
+      .root__main__content--box {
+        width: 200px;
+        height: 260px;
+        margin: 20px;
+        background-color: black;
+      }
+      .root__main__content--white {
+        color: white;
+        line-height: 5px;
+        padding-left: 10px;
+      }
+      .root__main__content--gray {
+        color: gray;
+        line-height: 5px;
+        padding-left: 10px;
+      }
+      .footer {
+        text-align: center;
+        border-top: 1px solid black;
+        width: 100%;
+        height: 10%;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="root">
+      <div class="root__nav-bar">
+        <a href="https://open.spotify.com/"
+          ><img
+            style="width: 100%; padding: 30px"
+            src="img/spotify_logo.png"
+            alt="스포티파이 로고"
+        /></a>
+        <div style="margin-bottom: 10px; margin-left: 10px">홈</div>
+        <div style="margin-bottom: 10px; margin-left: 10px">검색하기</div>
+        <div style="margin-bottom: 10px; margin-left: 10px">내 라이브러리</div>
+      </div>
+      <div class="root__main">
+        <div class="root__top-bar">
+          <div class="root__top--flex">
+            <div class="root__top-bar--border"><</div>
+            <div class="root__top-bar--border">></div>
+          </div>
+          <div class="root__top--flex">
+            <div class="root__top-bar--border">
+              <a
+                href="https://www.spotify.com/kr-ko/signup?forward_url=https%3A%2F%2Fopen.spotify.com%2F"
+                >가입하기</a
+              >
+            </div>
+            <div class="root__top-bar--border">
+              <a
+                href="https://accounts.spotify.com/ko/login?continue=https%3A%2F%2Fopen.spotify.com%2F"
+                >로그인하기</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="root__main__content">
+          <div class="root__main__content--box">
+            <img
+              style="width: 100%; padding: 10px"
+              src="img/newjeans_1st_single.jpeg"
+              alt="NewJeans 'OMG'"
+            />
+            <p class="root__main__content--white">NewJeans</p>
+            <p class="root__main__content--gray">OMG</p>
+          </div>
+          <div class="root__main__content--box">
+            <img
+              style="width: 100%; padding: 10px"
+              src="img/newjeans_free_single.jpeg"
+              alt="Ditto"
+            />
+            <p class="root__main__content--white">NewJeans</p>
+            <p class="root__main__content--gray">Ditto</p>
+          </div>
+          <div class="root__main__content--box">
+            <img
+              style="width: 100%; padding: 10px"
+              src="img/newjeans_mini_1.jpeg"
+              alt="NewJeans 1st EP 'New Jeans'"
+            />
+            <p class="root__main__content--white">NewJeans</p>
+            <p class="root__main__content--gray">Hype Boy</p>
+          </div>
+          <div class="root__main__content--box">
+            <img
+              style="width: 100%; padding: 10px"
+              src="img/newjeans_mini_1.jpeg"
+              alt="NewJeans 1st EP 'New Jeans'"
+            />
+            <p class="root__main__content--white">NewJeans</p>
+            <p class="root__main__content--gray">Attention</p>
+          </div>
+          <div class="root__main__content--box">
+            <img
+              style="width: 100%; padding: 10px"
+              src="img/newjeans_mini_1.jpeg"
+              alt="NewJeans 1st EP 'New Jeans'"
+            />
+            <p class="root__main__content--white">NewJeans</p>
+            <p class="root__main__content--gray">Cookie</p>
+          </div>
+          <div class="root__main__content--box">
+            <img
+              style="width: 100%; padding: 10px"
+              src="img/newjeans_mini_1.jpeg"
+              alt="NewJeans 1st EP 'New Jeans'"
+            />
+            <p class="root__main__content--white">NewJeans</p>
+            <p class="root__main__content--gray">Hurt</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <ul>
+        <li style="list-style: none">KDT 2기 5회차 소현섭</li>
+        <li style="list-style: none">KDT 2기 5회차 김규리</li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AirBnB</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <style>
+      @media screen and (max-width: 767px) {
+        #form_img {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div
+        class="d-flex justify-content-between align-items-center bg-white border-bottom sticky-top"
+        style="height: 100px"
+      >
+        <div class="logo">
+          <a
+            href="https://www.airbnb.co.kr"
+            class="text-decoration-none"
+            target="_blank"
+            ><img src="images/logo.png" alt="#" />
+            <img src="images/logo-2.png" alt="#"
+          /></a>
+        </div>
+        <div class="d-flex align-items-center fw-bold">
+          <div class="mx-5">회원가입</div>
+          <div>로그인</div>
+        </div>
+      </div>
+
+      <div
+        class="search-form d-flex justify-content-center align-items-center justify-content-md-between my-5"
+      >
+        <div class="border rounded p-3" style="width: 400px">
+          <h2><strong>한국의 휴가 임대 시설</strong></h2>
+          <p>에어비앤비에서 독특한 숙소를 예약하세요</p>
+          <div class="select-option">
+            <div class="form-floating my-2">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputValue"
+                placeholder="한국"
+                value="한국"
+              />
+              <label for="floatingInputValue">위치</label>
+            </div>
+            <div class="input-group my-2">
+              <div class="form-floating">
+                <input
+                  type="date"
+                  id="check-in"
+                  class="form-control"
+                  placeholder="날짜 입력"
+                />
+                <label for="check-in">체크인</label>
+              </div>
+              <div class="form-floating">
+                <input
+                  type="date"
+                  id="check-out"
+                  class="form-control"
+                  placeholder="날짜 입력"
+                />
+                <label for="check-out">체크아웃</label>
+              </div>
+            </div>
+            <div class="input-group my-2">
+              <div class="form-floating">
+                <select class="form-select" aria-label="select-adult">
+                  <option selected>1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                </select>
+                <label for="select-adult">성인</label>
+              </div>
+              <div class="form-floating">
+                <select class="form-select" aria-label="select-kid">
+                  <option selected>0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                </select>
+                <label for="select-kid">어린이</label>
+              </div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-danger w-100">검색</button>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="content-1 my-5">
+          <div>
+            <h2><strong>최고 평점을 받은 한국의 휴가 숙소</strong></h2>
+            <p>위치, 청결도 등에서 게스트의 높은 평가를 받은 숙소입니다.</p>
+          </div>
+          <div class="content-1_items row row-cols-1 row-cols-md-3">
+            <div class="item-1 card col border-0">
+              <div class="position-relative">
+                <img
+                  class="w-100 rounded"
+                  style="height: 300px"
+                  src="images/01.webp"
+                  alt="#"
+                />
+                <div
+                  class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                >
+                  <strong>슈퍼호스트</strong>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="d-flex justify-content-between align-items-center mb-0"
+                >
+                  <div class="text-truncate col">
+                    <strong>전주시 완산구의 집</strong>
+                  </div>
+                  <div><strong>⭐4.9 (49)</strong></div>
+                </div>
+                <div>
+                  <p class="text-truncate mb-0 text-muted">
+                    한옥스테이 “화응(花應)”
+                  </p>
+                  <p class="text-truncate text-muted">
+                    화응(花應)은 전주의 한가운데, 완산구 태평동에 위치하고
+                    있습니다. 태평동은 과거 최초의 전주역과 연초제조창이 있던
+                    교통과 상권의 중심이었으며 상인들의 마을인 주택가 골목에 그
+                    당시 풍수와 지리를 활용하여 1969년 15평으로 건축되었습니다.
+                    현재는 과거의 건축물들이 없어지고 아파트와 현대식 건물들이
+                    세워지지만 화응(花應)은 그때 그 모습 그대로 사색을 위한
+                    프라이빗 스테이로 디자인되었습니다. 흙은 사라지고 아스팔트와
+                    콘크리트 건물들 사이에 살아있는 화응(花應)을 아스팔트에
+                    피어있는 꽃으로 비유하여 도심 속의 꽃 "화응(花應)"이란
+                    이름이 만들어졌습니다. 화응을 관통하는 꽃을 형상화하기
+                    위하여 과거 한국적 꽃 이미지를 형상화했던 자료들을 바탕으로
+                    음과 양, 좌우 대칭되는 미와 현대적 미를 놓치지 않으며
+                    간결하고 명료하게 표현하였습니다. 도심 속의 꽃, 그 꽃으로
+                    응답합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item-2 card col border-0">
+              <div class="position-relative">
+                <img
+                  class="w-100 rounded"
+                  style="height: 300px"
+                  src="images/02.webp"
+                  alt="#"
+                />
+                <div
+                  class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                >
+                  <strong>슈퍼호스트</strong>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="d-flex justify-content-between align-items-center mb-0 col"
+                >
+                  <div class="text-truncate col">
+                    <strong>Gimsatgat-myeon, Yeongweol의 게스트용 별채</strong>
+                  </div>
+                  <div><strong>⭐4.97 (514)</strong></div>
+                </div>
+                <div>
+                  <p class="text-truncate mb-0 text-muted">
+                    별이 보이는 감성충만 프라이빗 복층 Cosmos Room
+                  </p>
+                  <p class="text-truncate text-muted">
+                    영월의 스테이 하우스는 커플이 프라이빗하게 쉬기 좋은
+                    객실입니다. 복층 구조로 되어있어 2층에 올라가면, 아늑하고
+                    따뜻한 느낌의 객실에서 편안하게 즐기실 수 있습니다. 창밖으로
+                    들리는 계곡 물소리와 지저귀는 새소리 그리고 맑은 공기는
+                    도시에서 지친 마음에 휴식을 주며 매일 청결하게 관리하는
+                    침구는 편안한 잠자리를 제공합니다. 김삿갓계곡의 외씨버선길과
+                    가깝고 숙소 바로 앞에는 아름다운 계곡이 흐르고 있습니다.
+                    객실에서는 Marshall 스피커로 감미로운 음악과 함께 빔
+                    프로젝터로 보다 실감 나고 편하게 영화를 감상하실 수 있으며,
+                    해 질 녘에는 아름다운 정원의 해먹에 누워 자연 속에서
+                    재충전의 시간을 가져보세요.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item-3 card col border-0">
+              <div class="position-relative">
+                <img
+                  class="w-100 rounded"
+                  style="height: 300px"
+                  src="images/03.webp"
+                  alt="#"
+                />
+                <div
+                  class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                >
+                  <strong>슈퍼호스트</strong>
+                </div>
+              </div>
+              <div>
+                <div
+                  class="d-flex justify-content-between align-items-center mb-0"
+                >
+                  <div class="text-truncate col">
+                    <strong>Cheomdangwahak-ro, Jeongeup-si의 돔하우스</strong>
+                  </div>
+                  <div><strong>⭐4.87 (322)</strong></div>
+                </div>
+                <div>
+                  <p class="text-truncate mb-0 text-muted">
+                    꽃담원(꽃담아카데미)
+                  </p>
+                  <p class="text-truncate text-muted">
+                    국립공원 내장산 구역 안에 있는 송죽마을(구 솔티)의 꽃담
+                    아카데미 내에 있습니다. 2층 다락이 딸린 20㎡의 내부
+                    공간(침실, 주방, 욕실)과 40㎡의 목재 데크가 있는 아치형
+                    방갈로 형태의 독립주택입니다. 주변이 국립공원이라 반딧불이
+                    서식하고 있고 앞 개울 건너에 담비가 사는 최고의 자연환경을
+                    유지하고 있습니다. 가족 단위 휴식과 팀 단위 MT에 적합하며 돔
+                    온실도 있어 30명 정도의 당일 워크숍도 가능합니다.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-2 my-5">
+          <h2 class="mb-4">
+            <strong>한국의 휴가용 임대 숙소의 인기 편의시설</strong>
+          </h2>
+          <div class="row row-cols-3 row-cols-md-5 g-2 fw-bold">
+            <div class="col">
+              <div class="border shadow p-3 rounded">
+                <div><img src="images/13.png" alt="#" /></div>
+                주방
+              </div>
+            </div>
+            <div class="col">
+              <div class="border shadow p-3 rounded">
+                <div><img src="images/14.png" alt="#" /></div>
+                무선 인터넷
+              </div>
+            </div>
+            <div class="col">
+              <div class="border shadow p-3 rounded">
+                <div><img src="images/15.png" alt="#" /></div>
+                수영장
+              </div>
+            </div>
+            <div class="col">
+              <div class="border shadow p-3 rounded">
+                <div><img src="images/16.png" alt="#" /></div>
+                건물 내 무료 주차
+              </div>
+            </div>
+            <div class="col">
+              <div class="border shadow p-3 rounded">
+                <div><img src="images/17.png" alt="#" /></div>
+                에어컨
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-3 my-5">
+          <h2 class="mb-4"><strong>한국의 다른 근사한 휴가 숙소</strong></h2>
+          <div class="row row-cols-1 row-cols-md-4">
+            <div class="col">
+              <div class="item-1 card col border-0">
+                <div class="position-relative">
+                  <img
+                    class="w-100 rounded"
+                    style="height: 300px"
+                    src="images/04.webp"
+                    alt="#"
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                  >
+                    <strong>슈퍼호스트</strong>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-0"
+                  >
+                    <div class="text-truncate col">
+                      <strong>완산구, 전주시의 통나무집</strong>
+                    </div>
+                    <div><strong>⭐5 (38)</strong></div>
+                  </div>
+                  <div>
+                    <p class="text-truncate text-muted">
+                      하루 감성한옥 독체 숙소공간 전체 사용
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="item-2 card col border-0">
+                <div class="position-relative">
+                  <img
+                    class="w-100 rounded"
+                    style="height: 300px"
+                    src="images/05.webp"
+                    alt="#"
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                  >
+                    <strong>슈퍼호스트</strong>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-0"
+                  >
+                    <div class="text-truncate col">
+                      <strong>Sindun-myeon, Icheon-si의 전원주택</strong>
+                    </div>
+                    <div><strong>⭐4.81 (137)</strong></div>
+                  </div>
+                  <div>
+                    <p class="text-truncate text-muted">
+                      서울 근교 이천시의 감성 힐링 숙소
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="item-3 card col border-0">
+                <div class="position-relative">
+                  <img
+                    class="w-100 rounded"
+                    style="height: 300px"
+                    src="images/06.webp"
+                    alt="#"
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                  >
+                    <strong>슈퍼호스트</strong>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-0"
+                  >
+                    <div class="text-truncate col">
+                      <strong>완산구, 전주시의 호텔 객실</strong>
+                    </div>
+                    <div><strong>⭐4.69 (446)</strong></div>
+                  </div>
+                  <div>
+                    <p class="text-truncate text-muted">
+                      전주 한옥마을 라온 한옥 꿀잠-4인실
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="item-4 card col border-0">
+                <div class="position-relative">
+                  <img
+                    class="w-100 rounded"
+                    style="height: 300px"
+                    src="images/07.webp"
+                    alt="#"
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                  >
+                    <strong>슈퍼호스트</strong>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-0"
+                  >
+                    <div class="text-truncate col">
+                      <strong>수영구의 레지던스</strong>
+                    </div>
+                    <div><strong>⭐5 (122)</strong></div>
+                  </div>
+                  <div>
+                    <p class="text-truncate text-muted">
+                      무제_제목없을용기_고요평온힐링_광안대교하프오션뷰_65인치넷플유투브_해돋이
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="item-5 card col border-0">
+                <div class="position-relative">
+                  <img
+                    class="w-100 rounded"
+                    style="height: 300px"
+                    src="images/08.webp"
+                    alt="#"
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                  >
+                    <strong>슈퍼호스트</strong>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-0"
+                  >
+                    <div class="text-truncate col">
+                      <strong>완산구, 전주시의 개인실</strong>
+                    </div>
+                    <div><strong>⭐4.91 (406)</strong></div>
+                  </div>
+                  <div>
+                    <p class="text-truncate text-muted">
+                      '은행나무 한옥'의 큰마루가 있는 앞마루방
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="item-6 card col border-0">
+                <div class="position-relative">
+                  <img
+                    class="w-100 rounded"
+                    style="height: 300px"
+                    src="images/09.webp"
+                    alt="#"
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                  >
+                    <strong>슈퍼호스트</strong>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-0"
+                  >
+                    <div class="text-truncate col">
+                      <strong>Hallim-eup Jeju-si의 집</strong>
+                    </div>
+                    <div><strong>⭐4.92 (295)</strong></div>
+                  </div>
+                  <div>
+                    <p class="text-truncate text-muted">
+                      [마리따] m01, 바닷가 바로 앞,커플,10평형원룸,
+                      조용한마을,곽지,협재 인근
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="item-7 card col border-0">
+                <div class="position-relative">
+                  <img
+                    class="w-100 rounded"
+                    style="height: 300px"
+                    src="images/10.webp"
+                    alt="#"
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                  >
+                    <strong>슈퍼호스트</strong>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-0"
+                  >
+                    <div class="text-truncate col">
+                      <strong>Gimsatgat-myeon, Yeongweol의 전원주택</strong>
+                    </div>
+                    <div><strong>⭐4.97 (383)</strong></div>
+                  </div>
+                  <div>
+                    <p class="text-truncate text-muted">
+                      프라이빗하게 즐기는 빔 프로젝터 Lily Room
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="item-8 card col border-0">
+                <div class="position-relative">
+                  <img
+                    class="w-100 rounded"
+                    style="height: 300px"
+                    src="images/11.webp"
+                    alt="#"
+                  />
+                  <div
+                    class="position-absolute top-0 start-0 bg-white m-2 p-2 rounded"
+                  >
+                    <strong>슈퍼호스트</strong>
+                  </div>
+                </div>
+                <div>
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-0"
+                  >
+                    <div class="text-truncate col">
+                      <strong>종로구의 개인실</strong>
+                    </div>
+                    <div><strong>⭐4.95 (174)</strong></div>
+                  </div>
+                  <div>
+                    <p class="text-truncate text-muted">
+                      spa#2 _Analog_Hanok_북촌
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
