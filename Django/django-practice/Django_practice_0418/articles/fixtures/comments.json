@@ -1,0 +1,11 @@
+[
+{
+    "model": "articles.comment",
+    "pk": 1,
+    "fields": {
+        "user": 1,
+        "article": 12,
+        "content": "좋아요!"
+    }
+}
+]

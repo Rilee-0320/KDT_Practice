@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>메인페이지</title>
+</head>
+<body>
+  {% if request.user.is_authenticated %}
+    <h1>{{ user }}님, 안녕하세요!</h1>
+    <form action="{% url 'accounts:logout' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="로그아웃">
+    </form>
+    <form action="{% url 'accounts:delete' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="회원탈퇴">
+    </form>
+    <a href="{% url 'accounts:update' %}">회원정보 수정</a>
+  {% else %}
+    <a href="{% url 'accounts:login' %}">로그인</a>
+    <a href="{% url 'accounts:signup' %}">회원가입</a>
+  {% endif %}
+  <hr>
+  <h1>영화 후기 목록</h1>
+  <a href="{% url 'reviews:create' %}">후기 작성</a>
+  {% for review in reviews %}
+    <p>작성자: {{ review.user }}</p>
+    <p>제목: {{ review.title }}</p>
+    <p>답글 수: {{ review.comment_set.all|length }}</p>
+    <a href="{% url 'reviews:detail' review.pk %}">자세히 보기</a>
+  {% endfor %}
+</body>
+</html>

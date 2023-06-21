@@ -1,0 +1,16 @@
+{% extends 'accounts/base.html' %}
+    
+{% block content %}
+<div class="container-fluid d-flex flex-column">
+    <h4> 전체 게시글</h4>
+</div>
+<div class="container-fluid d-flex flex-column mt-3">
+    {% for post in posts %}
+        <ul>
+            <li class="spread-underline" style="list-style: none;">
+                <a href="{% url 'posts:detail' post.pk %}">글 번호 - {{ post.pk }} / 카테고리 - {{ post.category }}</a>
+            </li>
+        </ul>
+    {% endfor %}
+</div>
+{% endblock content %}

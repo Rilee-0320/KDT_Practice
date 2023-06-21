@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="m-5">
+  {% for lotto_number in lotto_numbers %}
+  <p>{{ lotto_number }}</p>
+  {% endfor %}
+  <a href="/lotto-create/">뒤로 가기</a>
+</div>
+{% endblock content %}

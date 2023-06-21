@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <nav class="navbar d-flex justify-content-between p-3 border-bottom">
+    <div>
+      <a class="navbar-brand" href="{% url 'albums:create' %}">
+        <img src="{% static 'albums/cat-paw.png' %}" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
+        My Furry Family
+      </a>
+    </div>
+    <div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#image-share">
+        이미지 공유
+      </button>
+      <div class="modal fade" id="image-share" tabindex="-1" aria-labelledby="image-share-form" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="image-share-form">이미지 공유 폼</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form action="{% url 'albums:create' %}" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <div class="modal-body">
+            {{ form.as_p }}
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">공유하기</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container text-center p-5">
+    <div class="d-flex justify-content-center row row-cols-4 row-cols-sm-1">
+      {% for album in albums %}
+      <div class="card m-2" style="width: 18rem;">
+        <img src="{{ album.image.url }}" class="card-img-top my-2 rounded" alt="#" style="height:250px">
+        <div class="card-body">
+          <h5 class="card-title">{{ album.content }}</h5>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock content %}

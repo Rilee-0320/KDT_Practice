@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container m-3">
+    <h3>할 일 제목: {{ todo.title}}</h3>
+    <p>할 일 내용: {{ todo.content }}</p>
+    <p>우선순위: {{ todo.priority }}</p>
+    <p>마감기한: {{ todo.deadline }}</p>
+    <a href="{% url 'todos:index' %}">
+      <button type="button" class="btn btn-outline-primary">메인 화면으로 가기</button>
+    </a>
+  </div>
+{% endblock content %}

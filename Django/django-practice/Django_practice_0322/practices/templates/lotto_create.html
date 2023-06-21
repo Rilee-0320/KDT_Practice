@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="/lotto/" method="GET" class="row m-5">
+  <div class="col-auto">
+    <input type="number" name="number" class="form-control" placeholder="로또 생성 수" min="1">
+  </div>
+  <div class="col-auto">
+    <input type="submit" class="btn btn-outline-primary" value="생성">
+  </div>
+</form>
+{% endblock content %}

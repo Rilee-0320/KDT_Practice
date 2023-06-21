@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>안녕하세요, {{ user }} 님!</h1>
+  {% if request.user.is_authenticated %}
+    <form action="{% url 'accounts:logout' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="로그아웃">
+    </form>
+    <a href="{% url 'accounts:update' %}">회원정보 수정</a>
+    <a href="{% url 'accounts:change_password' %}">비밀번호 변경</a>
+    <form action="{% url 'accounts:delete' %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="회원탈퇴">
+    </form>
+    <p>사용자 이름: {{ user.username }}</p>
+    <p>이메일: {{ user.email}}</p>
+    <p>이름: {{ user.first_name}}</p>
+    <p>성: {{ user.last_name}}</p>
+  {% else %}
+    <a href="{% url 'accounts:login' %}">[로그인]</a>
+    <a href="{% url 'accounts:signup' %}">[회원가입]</a>
+  {% endif %}
+</body>
+</html>

@@ -1,0 +1,42 @@
+[
+{
+    "model": "accounts.user",
+    "pk": 1,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$7aKeXIdIixvSKJ1gq70igE$s5b/ZdqbYEMLX6t0RtbmPkURQAl6cEcNmh/CvRSxuH0=",
+        "last_login": "2023-04-18T06:06:15.560Z",
+        "is_superuser": false,
+        "username": "rilee",
+        "first_name": "규리",
+        "last_name": "김",
+        "email": "go13209@naver.com",
+        "is_staff": false,
+        "is_active": true,
+        "date_joined": "2023-04-18T05:02:46.006Z",
+        "groups": [],
+        "user_permissions": [],
+        "followings": []
+    }
+},
+{
+    "model": "accounts.user",
+    "pk": 2,
+    "fields": {
+        "password": "pbkdf2_sha256$260000$Wqm5M26iVnLzKOqj6k0Tkv$ts7Y2ILLuU+H7dV6vvxnuc4bBXOJbQLkiFaovPBlD6w=",
+        "last_login": "2023-04-18T06:16:57.937Z",
+        "is_superuser": true,
+        "username": "admin",
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "is_staff": true,
+        "is_active": true,
+        "date_joined": "2023-04-18T05:05:30.672Z",
+        "groups": [],
+        "user_permissions": [],
+        "followings": [
+            1
+        ]
+    }
+}
+]

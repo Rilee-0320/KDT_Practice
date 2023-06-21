@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+  <h1 class="text-end">생성하기</h1>
+  <form action="{% url 'accountbooks:create' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="note" placeholder="note" name="note" style="height: 100px; font-size: 2rem;" required>
+      <label for="note">내용</label>
+    </div>
+    <div class="form-floating mb-3">
+      <textarea class="form-control" placeholder="메모" name='description' id="description" style="height: 150px; font-size: 2rem;" required></textarea>
+      <label for="description">메모</label>
+    </div>
+    <div class="mb-3">
+      <select class="form-select" id="category" name="category" style="height: 70px; font-size: 2rem;" required>
+        <option selected>카테고리</option>
+        <option value="식비">식비</option>
+        <option value="교통비">교통비</option>
+        <option value="통신비">통신비</option>
+        <option value="의류">의류</option>
+        <option value="문화생활">문화생활</option>
+        <option value="의료/건강">의료/건강</option>
+      </select>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="number" class="form-control" id="amount" name="amount" style="height: 100px; font-size: 2rem;" required>
+      <label for="amount">금액</label>
+    </div>
+    <div class="form-floating mb-3">
+      <input type="date" class="form-control" id="date" placeholder="date" value="{{ today|date:'Y-m-d' }}" name="date" style="height: 100px; font-size: 2rem;" required>
+      <label for="date">날짜</label>
+    </div>
+    <div class="d-flex">
+      <button class="btn btn-primary flex-grow-1" style="font-size: 2rem;" type="submit">생성하기</button>
+    </div>
+  </form>
+</div>
+{% endblock content %}
+
+{% block script %}
+  note = document.getElementById('note')
+  note.focus()
+{% endblock script %}

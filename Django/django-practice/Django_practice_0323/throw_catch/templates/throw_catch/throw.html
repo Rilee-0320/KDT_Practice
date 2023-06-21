@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <form action="{% url 'throw_catch:catch' %}" method="GET" class="row m-5">
+    <div class="col-auto">
+      <input type="text" name="message" class="form-control" placeholder="내용 입력">
+    </div>
+    <div class="col-auto">
+      <input type="submit" value="Throw" class="btn btn-outline-primary">
+    </div>
+  </form>
+{% endblock content %}

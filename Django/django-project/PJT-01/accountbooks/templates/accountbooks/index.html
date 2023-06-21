@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block style %}
+<style>
+  #nav_bar {
+    width: 50rem;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+  }
+</style>
+{% endblock style %}
+
+{% block content %}
+<div>
+  {% for accountbook in accountbooks %}    
+  <table class="table table-borderless">      
+    <tbody>
+      <tr>
+        <td>{{ accountbook.date|date:'Y-m-d' }}</td>
+      </tr>
+      <tr>
+        <td class="col-2">{{ accountbook.category }}</td>
+        <td>
+          <a href="{% url 'accountbooks:detail' accountbook.pk %}">{{ accountbook.note }}</a>
+        </td>
+        <td class="text-end">{{ accountbook.amount }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+  {% endfor %}
+</div>
+{% endblock content %}
+
+
+
+
+

@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div>
+    <a href="{% url 'articles:index' %}">[메인페이지로 가기]</a>
+    <h1>
+      {{ person.username }}님의 프로필 페이지
+    </h1>
+    <div>
+      팔로잉 수 - {{ person.followings.all|length }} / 팔로워 수 - {{ person.followers.all|length }}
+    </div>
+    <div>
+      {% if request.user.is_authenticated %}
+        {% if request.user != person %}
+          <form action="{% url 'accounts:follow' person.pk %}">
+            {% csrf_token %}
+            {% if request.user in person.followers.all %}
+              <input type="submit" value="Unfollow">
+            {% else %}
+              <input type="submit" value="Follow">
+            {% endif %}
+          </form>
+        {% endif %}
+      {% else %}
+        <input type="submit" value="Follow" disabled>
+      {% endif %}
+    </div>
+  </div>
+  <hr>
+  <div>
+    <h3>팔로잉 목록</h3>
+    {% for following in person.followings.all %}
+      <p><a href="{% url 'accounts:profile' following.username %}">{{ following.username }}</a></p>
+    {% endfor %}
+  </div>
+  <hr>
+  <div>
+    <h3>팔로워 목록</h3>
+    {% for follower in person.followers.all %}
+      <p><a href="{% url 'accounts:profile' follower.username %}">{{ follower.username }}</a></p>
+    {% endfor %}
+  </div>
+{% endblock content %}

@@ -1,0 +1,23 @@
+{% extends 'accounts/base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+<form action="{% url 'posts:create'}" method="POST">
+    {% csrf_token %}
+      
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-outline-primary" role="button">
+</form>
+<script>
+    function validDate() {
+        const dateInput = document.getElementsByname('date')[0];
+        const submitButton = document.getElementsById('submit-button');
+        if (!Date.parse(dateInput.value)) {
+            submitButton.disabled = true;
+        }   else {
+            submitbutton.disabled = false;
+        }
+    }
+
+</script>
+    {% endblock content %}

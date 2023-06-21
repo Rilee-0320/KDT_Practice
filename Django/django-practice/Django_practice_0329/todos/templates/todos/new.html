@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class='container'>
+    <form action="{% url 'todos:create' %}" method="GET">
+      <div class="m-3">
+        <label for="title">할 일 제목</label><br>
+        <input type="text" name="title" id="title">
+      </div>
+      <div class="m-3">
+        <label for="content">할 일 내용</label><br>
+        <textarea name="content" id="content" cols="50" rows="10"></textarea>
+      </div>
+      <div class="m-3">
+        <label for="priority">우선순위</label><br>
+        <input type="number" name="priority" id="priority" min="1">
+      </div>
+      <div class="m-3">
+        <label for="deadline">마감기한</label><br>
+        <input type="date" name="deadline" id="deadline" value="2023-03-29">
+      </div>  
+      <div class="m-3">
+        <input type="submit" value="할 일 생성" class="btn btn-outline-primary">
+      </div>
+    </form>
+  </div>
+{% endblock content %}
