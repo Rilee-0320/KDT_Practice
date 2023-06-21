@@ -1,0 +1,30 @@
+{% load static %}
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid justify-content-between">
+    <a class="navbar-brand" href="{% url 'reviews:index' %}">
+      <div>
+        <img src="{% static 'images/film-reel.png' %}" alt="필름 아이콘" style="width:50px;">
+        Reviews
+      </div>
+    </a>
+    <div>
+      {% if user.is_authenticated %}
+      <p class="d-inline-block">
+        <a href="{% url 'accounts:profile' %}">
+          {{ user }}
+        </a>님, 안녕하세요!
+      </p>
+      <a href="{% url 'accounts:logout' %}">
+        <button class="btn btn-sm btn-outline-success me-2" type="button">로그아웃</button>
+      </a>  
+      {% else %}
+      <a href="{% url 'accounts:login' %}">
+        <button class="btn btn-sm btn-outline-success me-2" type="button">로그인</button>
+      </a>
+      <a href="{% url 'accounts:signup' %}">
+        <button class="btn btn-sm btn-outline-secondary" type="button">회원가입</button>
+      </a>
+      {% endif %}
+    </div>
+  </div>
+</nav>
